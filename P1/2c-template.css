@@ -6,18 +6,64 @@
   }
   
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
-.columna {
+.filla:after {
 float: left;
 padding: 10px;
 min-height: 5000px;
 }
 
-.izquierda {
-width: 20%;
+.arriba {
+width: 100%;
 }
 
-.derecha {
-width: 80%;
+
+/* Contenedor para centrar los botones */
+.menu-navigation {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 15px;
+  padding: 20px;
+  flex-wrap: wrap; /* Para que en móvil se pongan uno debajo de otro */
+}
+
+/* Transformar el enlace en un BOTÓN */
+.nav-btn {
+  text-decoration: none; /* Quita el subrayado azul feo */
+  color: black;
+  font-family: 'Arial Black', sans-serif;
+  font-weight: bold;
+  padding: 17px 55px;
+  border-radius: 50px; /* Hace que sean redondos en las puntas */
+  background-color: #ffde59; /* Color amarillo de base */
+  border: 3px solid black; /* Borde negro grueso */
+  box-shadow: 4px 4px 0px black; /* La sombra negra sólida (estilo Bad Bunny) */
+  transition: 0.2s; /* Para que se mueva suave al hacer clic */
+}
+
+/* Efecto cuando pasas el ratón por encima */
+.nav-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px black;
+}
+
+/* ESTILO PARA EL BOTÓN ACTIVO (La página donde estás) */
+.nav-btn.active {
+  background-color: #f4959b; /* Color rojo/coral para resaltar */
+  color: white;
+}
+
+.imagen-rosa-bad-bunny {
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;  
+  background-color: #ffde59;
+  padding: 10px;
+  width: 35%;
+
+}
+
+.abajo {
+width: 100%;
 }
 
 /* Clear floats despues de las columnas para eliminar la superposición */
@@ -26,6 +72,53 @@ content: "";
 display: table;
 clear: both;
 }
+
+
+
+/* El contenedor que organiza las columnas */
+.columnas-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que bajen en móviles */
+  gap: 20px;       /* Espacio entre las dos columnas */
+  padding: 20px;
+  justify-content: center; 
+  width: 50%;
+  margin: 25px auto; /* Centra el contenedor en la página */
+}
+
+/* Decoración de cada columna individual */
+.columna {
+  flex: 1;                /* Hace que ambas midan lo mismo */
+  min-width: 300px;       /* En pantallas pequeñas, si no caben 300px, se apilan */
+  background-color: #ffde59; /* Color amarillo de fondo */
+  border: 4px solid black; /* Borde grueso estilo Bad Bunny */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 8px 8px 0px #F4959B; /* Sombra sólida con el rosa de la foto */
+  font-size: 23px;
+  transition: 0.3s; /* Para que se mueva suave al hacer hover */
+}
+
+.columna:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px #F4959B;
+}
+
+.columna h2 {
+  text-transform: uppercase;
+  color: black;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.columna ul {
+  list-style: "🐰"; /* Un toque divertido para los puntos de la lista */
+  padding-left: 15px;
+}
+
+
+
 
 #c1 {
     background-color: #4ae94a;
