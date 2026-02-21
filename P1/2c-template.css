@@ -9,15 +9,15 @@
 .columna {
 float: left;
 padding: 10px;
-min-height: 500px;
+min-height: 5000px;
 }
 
 .izquierda {
-width: 25%;
+width: 20%;
 }
 
 .derecha {
-width: 75%;
+width: 80%;
 }
 
 /* Clear floats despues de las columnas para eliminar la superposición */
@@ -28,11 +28,11 @@ clear: both;
 }
 
 #c1 {
-    background-color:#aaa;
+    background-color: #4ae94a;
 }
 
 #c2 {
-    background-color:#bbb;
+    background-color:#016106;
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
