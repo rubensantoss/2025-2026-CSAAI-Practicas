@@ -58,7 +58,7 @@ width: 100%;
   margin-right: auto;  
   background-color: #ffde59;
   padding: 10px;
-  width: 35%;
+  width: 30%;
 
 }
 
@@ -119,17 +119,103 @@ clear: both;
 
 
 
-
-#c1 {
-    background-color: #4ae94a;
+/* EL CONTENEDOR: Este pone los posters en fila */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;      /* Si no caben (en móvil), se ponen uno debajo de otro */
+    justify-content: center; /* Los centra en la pantalla */
+    gap: 30px;            /* Espacio de separación entre los dos posters */
+    padding: 20px;
 }
 
-#c2 {
-    background-color:#016106;
+
+.poster-style {
+    background-color: #ffffff;
+    border: 2px solid #000;
+    width: 550px;         /* Ancho de cada poster */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
-/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
+.card-img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #000;
+}
+
+/* LISTA EN DOS COLUMNAS (Como el poster de Etsy) */
+.album-1 .tracklist{
+  list-style: "🪑 ";
+  padding-left: 20px;
+  column-count: 2;      /* Divide las canciones en dos columnas */
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.album-2 .tracklist{
+  list-style: "🐎 ";
+  padding-left: 20px;
+  column-count: 2;      /* Divide las canciones en dos columnas */
+  gap: 10px;
+  margin: 15px 0; 
+}
+
+.album-3 .tracklist{
+  list-style: "❤️ ";
+  padding-left: 20px;
+  column-count: 2;      /* Divide las canciones en dos columnas */
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.album-1 .tracklist li {
+    font-size: 0.2 rem;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+/* PALETA Y TÍTULOS */
+.palette-container {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end; /* Cuadraditos a la derecha */
+}
+
+.swatch {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+}
+
+.titulo {
+    text-align: right;    /* Texto a la derecha */
+    margin-top: 10px;
+}
+
+/* Colores de las muestras */
+/* --- COLORES PARA EL ÁLBUM 1 (Original) --- */
+.album-1 .red { background-color: #65823E; }
+.album-1 .lavender { background-color: #C0C3BA; }
+.album-1 .pink { background-color: #7F7362; }
+.album-1 .yellow { background-color: #364935; }
+.album-1 .blalck { background-color: #2C2E2D; }
+.album-1 { box-shadow: 12px 12px 0px #65823E; } /* Sombra rosa */
+
+/* --- COLORES PARA EL ÁLBUM 2 (Nadie Sabe - Azul/Oscuro) --- */
+.album-2 .red { background-color: #C1C4BB; } 
+.album-2 .lavender { background-color: #7F7462; }
+.album-2 .pink { background-color: #573a0c; }
+.album-2 .yellow { background-color: #2C2E2D; }
+.album-2 { box-shadow: 12px 12px 0px #573a0c; } /* Sombra azul */
+
+/* --- COLORES PARA EL ÁLBUM 3 (YHLQMDLG - Multicolor/Negro) --- */
+.album-3 .red { background-color: #E63928; }
+.album-3 .lavender { background-color: #D1D7F3; }
+.album-3 .pink { background-color: #F4959B; }
+.album-3 .yellow { background-color: #F1B418; }
+.album-3 { box-shadow: 12px 12px 0px #E63928; } /* Sombra amarilla */
+
 
 img {
     width: 100%;
@@ -142,17 +228,43 @@ img {
     width: 50%;
   }
 
-/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
-/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
-
-@media screen and (max-width: 600px) {
-    .columna {
-      width: 100%;
-    }
-
-    .iresponsive {
-        width: 100%;
-    }
+/* Contenedor del menú */
+.spotify-3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }
 
-/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
+/* El enlace convertido en botón con imagen */
+.spotify-3 a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #1DB954; /* Verde Spotify */
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid #1DB954;
+    padding: 8px 15px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* Añadir la imagen antes del texto mediante CSS */
+.spotify-3 a::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Efecto al pasar el ratón */
+.spotify-3 a:hover {
+    background-color: #1DB954;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(29, 185, 84, 0.3);
+}
