@@ -90,7 +90,7 @@ clear: both;
 .columna {
   flex: 1;                /* Hace que ambas midan lo mismo */
   min-width: 300px;       /* En pantallas pequeñas, si no caben 300px, se apilan */
-  background-color: #ffde59; /* Color amarillo de fondo */
+  background-color: #ffffff; /* Color amarillo de fondo */
   border: 4px solid black; /* Borde grueso estilo Bad Bunny */
   border-radius: 15px;
   padding: 20px;
@@ -132,10 +132,11 @@ clear: both;
 .poster-style {
     background-color: #ffffff;
     border: 2px solid #000;
-    width: 550px;         /* Ancho de cada poster */
+    width: 350px;         /* Ancho de cada poster */
     padding: 15px;
     display: flex;
     flex-direction: column;
+    min-height: 700px;
 }
 
 .card-img {
@@ -143,6 +144,7 @@ clear: both;
     height: auto;
     border-bottom: 2px solid #000;
 }
+
 
 /* LISTA EN DOS COLUMNAS (Como el poster de Etsy) */
 .album-1 .tracklist{
@@ -169,8 +171,8 @@ clear: both;
   margin: 15px 0;
 }
 
-.album-1 .tracklist li {
-    font-size: 0.2 rem;
+.tracklist li {
+    font-size: 16px;
     text-transform: uppercase;
     line-height: 1.4;
 }
@@ -189,8 +191,8 @@ clear: both;
 }
 
 .titulo {
-    text-align: right;    /* Texto a la derecha */
-    margin-top: 10px;
+    text-align: right;    
+    margin-top: auto;
 }
 
 /* Colores de las muestras */
@@ -267,4 +269,74 @@ img {
     background-color: #1DB954;
     color: white;
     box-shadow: 0px 4px 10px rgba(29, 185, 84, 0.3);
+}
+
+
+.contenido-container {
+    display: flex;           /* Alinea imagen y texto en una fila */
+    align-items: flex-start; /* Alinea el texto con la parte superior de la foto */
+    gap: 30px;               /* Espacio generoso entre la foto y el texto */
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.imagen-superbowl-bad-bunny {
+    background-color: #3463fc; /* El recuadro azul */
+    padding: 10px;
+    flex-shrink: 0;            /* ¡IMPORTANTE! Evita que la imagen se haga pequeña */
+    display: inline-block;
+    margin-left: 50px;         /* Mantiene tu margen izquierdo */
+}
+
+.imagen-superbowl-bad-bunny img {
+    width: 550px;              /* Define aquí el tamaño fijo que quieras */
+    height: auto;
+    display: block;            /* Elimina espacios extra debajo de la imagen */
+}
+
+.texto-box {
+    flex-grow: 1;              /* El texto toma todo el espacio derecho disponible */
+    max-width: 1500px;          /* Evita que las líneas sean demasiado largas para leer */
+}
+
+.texto-box h2 {
+    margin-top: 0;             /* Alineación perfecta con el borde superior de la imagen */
+    color: #000;
+}
+
+
+
+
+.contenido-container-2 {
+    display: flex;           
+    flex-direction: row-reverse; /* ESTA LÍNEA VOLTEA EL ORDEN: Texto a la izq, Imagen a la der */
+    align-items: flex-start; 
+    gap: 30px;               
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.imagen-wwe-bad-bunny {
+    background-color: red; /* Recuadro naranja */
+    padding: 10px;
+    flex-shrink: 0;            
+    display: inline-block;
+    /* Cambié margin-right por margin-left para que se separe correctamente del borde derecho si fuera necesario */
+    margin-right: 50px;         
+}
+
+.imagen-wwe-bad-bunny img {
+    width: 550px;              
+    height: auto;
+    display: block;            
+}
+
+.texto-box {
+    flex-grow: 2;              
+    max-width: 1500px;          
+}
+
+.texto-box h2 {
+    margin-top: 0;             
+    color: #000;
 }
