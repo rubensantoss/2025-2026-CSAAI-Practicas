@@ -1,6 +1,13 @@
 /* https://www.w3schools.com/howto/howto_css_two_columns.asp */
 /* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
 /* Así definimos el comportamiento de caja para todos los elementos */
+body {
+    background-color: #FADBD8; /* Cambia este código por el que más te guste */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
 * {
     box-sizing: border-box;
   }
@@ -52,7 +59,7 @@ width: 100%;
   color: white;
 }
 
-.imagen-rosa-bad-bunny {
+/* .imagen-rosa-bad-bunny {
   display: block; 
   margin-left: auto;
   margin-right: auto;  
@@ -60,7 +67,33 @@ width: 100%;
   padding: 10px;
   width: 30%;
 
+} */
+
+
+/* El contenedor que manda */
+.galeria-fotos {
+    display: flex;          /* Alinea los hijos en horizontal */
+    
+    justify-content: center; /* Los centra en la pantalla */
+    gap: 20px;              /* Espacio entre las fotos */
+    padding: 20px;
+    flex-wrap: wrap;
 }
+
+/* Tu clase de imagen actualizada */
+.imagen-rosa-bad-bunny {
+    background-color: #ffde59;
+    padding: 10px;
+    width: 450px;           /* Usar un ancho fijo o % más pequeño */
+    box-shadow: 8px 8px 0px #ff91a4; /* Sombra estilo "sticker" como tu diseño */
+    border: 3px solid black;
+}
+
+.imagen-rosa-bad-bunny img {
+    width: 100%;            /* La foto se adapta al recuadro */
+    display: block;
+}
+
 
 .abajo {
 width: 100%;
@@ -272,71 +305,60 @@ img {
 }
 
 
-.contenido-container {
-    display: flex;           /* Alinea imagen y texto en una fila */
-    align-items: flex-start; /* Alinea el texto con la parte superior de la foto */
-    gap: 30px;               /* Espacio generoso entre la foto y el texto */
-    padding: 20px;
-    font-family: sans-serif;
+
+.main-content {
+    max-width: 900px; /* Ancho contenido para lectura cómoda */
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-.imagen-superbowl-bad-bunny {
-    background-color: #3463fc; /* El recuadro azul */
-    padding: 10px;
-    flex-shrink: 0;            /* ¡IMPORTANTE! Evita que la imagen se haga pequeña */
-    display: inline-block;
-    margin-left: 50px;         /* Mantiene tu margen izquierdo */
+/* Tarjetas Verticales */
+.card {
+    background: white;
+    margin-bottom: 60px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 90px 90px rgba(0, 0, 0, 0.05); /* Sombra suave */
 }
 
-.imagen-superbowl-bad-bunny img {
-    width: 550px;              /* Define aquí el tamaño fijo que quieras */
+.card-image {
+    position: relative;
+    width: 100%;
+}
+
+.card-image img {
+    width: 100%;
     height: auto;
-    display: block;            /* Elimina espacios extra debajo de la imagen */
+    display: block;
+    object-fit: cover;
 }
 
-.texto-box {
-    flex-grow: 1;              /* El texto toma todo el espacio derecho disponible */
-    max-width: 1500px;          /* Evita que las líneas sean demasiado largas para leer */
+/* Detalle de color elegante en lugar de un borde total */
+.image-overlay-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+}
+.blue { background-color: #3463fc; }
+.red { background-color: #e63946; }
+
+/* Contenedor de Texto */
+.card-text {
+    padding: 40px;
 }
 
-.texto-box h2 {
-    margin-top: 0;             /* Alineación perfecta con el borde superior de la imagen */
-    color: #000;
+.card-text h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    font-weight: 800;
 }
 
-
-
-
-.contenido-container-2 {
-    display: flex;           
-    flex-direction: row-reverse; /* ESTA LÍNEA VOLTEA EL ORDEN: Texto a la izq, Imagen a la der */
-    align-items: flex-start; 
-    gap: 30px;               
-    padding: 20px;
-    font-family: sans-serif;
-}
-
-.imagen-wwe-bad-bunny {
-    background-color: red; /* Recuadro naranja */
-    padding: 10px;
-    flex-shrink: 0;            
-    display: inline-block;
-    /* Cambié margin-right por margin-left para que se separe correctamente del borde derecho si fuera necesario */
-    margin-right: 50px;         
-}
-
-.imagen-wwe-bad-bunny img {
-    width: 550px;              
-    height: auto;
-    display: block;            
-}
-
-.texto-box {
-    flex-grow: 2;              
-    max-width: 1500px;          
-}
-
-.texto-box h2 {
-    margin-top: 0;             
-    color: #000;
+.card-text p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: justify;
 }
