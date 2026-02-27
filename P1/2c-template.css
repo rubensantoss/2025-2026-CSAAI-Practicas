@@ -1,8 +1,6 @@
-/* https://www.w3schools.com/howto/howto_css_two_columns.asp */
-/* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
-/* Así definimos el comportamiento de caja para todos los elementos */
+
 body {
-    background-color: #FADBD8; /* Cambia este código por el que más te guste */
+    background-color: #FADBD8; 
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -12,125 +10,99 @@ body {
     box-sizing: border-box;
   }
   
-/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .filla:after {
 float: left;
 padding: 10px;
 min-height: 5000px;
-}
-
-.arriba {
-width: 100%;
-}
-
-
-/* Contenedor para centrar los botones */
-.menu-navigation {
-  display: flex;
-  justify-content: center; /* Centra los botones horizontalmente */
-  gap: 15px;
-  padding: 20px;
-  flex-wrap: wrap; /* Para que en móvil se pongan uno debajo de otro */
-}
-
-/* Transformar el enlace en un BOTÓN */
-.nav-btn {
-  text-decoration: none; /* Quita el subrayado azul feo */
-  color: black;
-  font-family: 'Arial Black', sans-serif;
-  font-weight: bold;
-  padding: 17px 55px;
-  border-radius: 50px; /* Hace que sean redondos en las puntas */
-  background-color: #ffde59; /* Color amarillo de base */
-  border: 3px solid black; /* Borde negro grueso */
-  box-shadow: 4px 4px 0px black; /* La sombra negra sólida (estilo Bad Bunny) */
-  transition: 0.2s; /* Para que se mueva suave al hacer clic */
-}
-
-/* Efecto cuando pasas el ratón por encima */
-.nav-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px black;
-}
-
-/* ESTILO PARA EL BOTÓN ACTIVO (La página donde estás) */
-.nav-btn.active {
-  background-color: #f4959b; /* Color rojo/coral para resaltar */
-  color: white;
-}
-
-/* .imagen-rosa-bad-bunny {
-  display: block; 
-  margin-left: auto;
-  margin-right: auto;  
-  background-color: #ffde59;
-  padding: 10px;
-  width: 30%;
-
-} */
-
-
-/* El contenedor que manda */
-.galeria-fotos {
-    display: flex;          /* Alinea los hijos en horizontal */
-    
-    justify-content: center; /* Los centra en la pantalla */
-    gap: 20px;              /* Espacio entre las fotos */
-    padding: 20px;
-    flex-wrap: wrap;
-}
-
-/* Tu clase de imagen actualizada */
-.imagen-rosa-bad-bunny {
-    background-color: #ffde59;
-    padding: 10px;
-    width: 450px;           /* Usar un ancho fijo o % más pequeño */
-    box-shadow: 8px 8px 0px #ff91a4; /* Sombra estilo "sticker" como tu diseño */
-    border: 3px solid black;
-}
-
-.imagen-rosa-bad-bunny img {
-    width: 100%;            /* La foto se adapta al recuadro */
-    display: block;
-}
-
-
-.abajo {
-width: 100%;
-}
-
-/* Clear floats despues de las columnas para eliminar la superposición */
-.filla:after {
 content: "";
 display: table;
 clear: both;
 }
 
 
+.menu-navigation {
+  display: flex;
+  justify-content: center; 
+  gap: 15px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
 
-/* El contenedor que organiza las columnas */
+
+.nav-btn {
+  text-decoration: none; 
+  color: black;
+  font-family: 'Arial Black', sans-serif;
+  font-weight: bold;
+  padding: 17px 55px;
+  border-radius: 50px; 
+  background-color: #ffde59;
+  border: 3px solid black; 
+  box-shadow: 4px 4px 0px black; 
+  transition: 0.2s; 
+}
+
+
+.nav-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px black;
+}
+
+
+.nav-btn.active {
+  background-color: #f4959b;
+  color: white;
+}
+
+
+.galeria-fotos {
+    display: flex;          
+    
+    justify-content: center; 
+    gap: 20px;              
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+
+.imagen-rosa-bad-bunny {
+    background-color: #ffde59;
+    padding: 10px;
+    width: 450px;           
+    box-shadow: 8px 8px 0px #ff91a4; 
+    border: 3px solid black;
+}
+
+
+.imagen-rosa-bad-bunny img {
+    width: 100%;            
+    display: block;
+}
+
+
 .columnas-container {
   display: flex;
-  flex-wrap: wrap; /* Permite que bajen en móviles */
-  gap: 20px;       /* Espacio entre las dos columnas */
+  flex-wrap: wrap; 
+  gap: 20px;       
   padding: 20px;
   justify-content: center; 
   width: 50%;
-  margin: 25px auto; /* Centra el contenedor en la página */
+  margin: 25px auto; 
 }
 
-/* Decoración de cada columna individual */
+
 .columna {
-  flex: 1;                /* Hace que ambas midan lo mismo */
-  min-width: 300px;       /* En pantallas pequeñas, si no caben 300px, se apilan */
-  background-color: #ffffff; /* Color amarillo de fondo */
-  border: 4px solid black; /* Borde grueso estilo Bad Bunny */
+  flex: 1;                
+  min-width: 300px;       
+  background-color: #ffffff;
+  border: 4px solid black; 
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 8px 8px 0px #F4959B; /* Sombra sólida con el rosa de la foto */
+  box-shadow: 8px 8px 0px #F4959B; 
   font-size: 23px;
-  transition: 0.3s; /* Para que se mueva suave al hacer hover */
+  transition: 0.3s; 
 }
+
 
 .columna:hover {
   transform: translate(-4px, -4px);
@@ -146,18 +118,15 @@ clear: both;
 }
 
 .columna ul {
-  list-style: "🐰"; /* Un toque divertido para los puntos de la lista */
+  list-style: "🐰"; 
   padding-left: 15px;
 }
 
-
-
-/* EL CONTENEDOR: Este pone los posters en fila */
 .projects-grid {
     display: flex;
-    flex-wrap: wrap;      /* Si no caben (en móvil), se ponen uno debajo de otro */
-    justify-content: center; /* Los centra en la pantalla */
-    gap: 30px;            /* Espacio de separación entre los dos posters */
+    flex-wrap: wrap;      
+    justify-content: center; 
+    gap: 30px;            
     padding: 20px;
 }
 
@@ -165,7 +134,7 @@ clear: both;
 .poster-style {
     background-color: #ffffff;
     border: 2px solid #000;
-    width: 350px;         /* Ancho de cada poster */
+    width: 350px;         
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -179,11 +148,10 @@ clear: both;
 }
 
 
-/* LISTA EN DOS COLUMNAS (Como el poster de Etsy) */
 .album-1 .tracklist{
   list-style: "🪑 ";
   padding-left: 20px;
-  column-count: 2;      /* Divide las canciones en dos columnas */
+  column-count: 2;      
   gap: 10px;
   margin: 15px 0;
 }
@@ -191,7 +159,7 @@ clear: both;
 .album-2 .tracklist{
   list-style: "🐎 ";
   padding-left: 20px;
-  column-count: 2;      /* Divide las canciones en dos columnas */
+  column-count: 2;     
   gap: 10px;
   margin: 15px 0; 
 }
@@ -199,7 +167,7 @@ clear: both;
 .album-3 .tracklist{
   list-style: "❤️ ";
   padding-left: 20px;
-  column-count: 2;      /* Divide las canciones en dos columnas */
+  column-count: 2;      
   gap: 10px;
   margin: 15px 0;
 }
@@ -210,11 +178,10 @@ clear: both;
     line-height: 1.4;
 }
 
-/* PALETA Y TÍTULOS */
 .palette-container {
     display: flex;
     gap: 5px;
-    justify-content: flex-end; /* Cuadraditos a la derecha */
+    justify-content: flex-end; 
 }
 
 .swatch {
@@ -228,28 +195,24 @@ clear: both;
     margin-top: auto;
 }
 
-/* Colores de las muestras */
-/* --- COLORES PARA EL ÁLBUM 1 (Original) --- */
 .album-1 .red { background-color: #65823E; }
 .album-1 .lavender { background-color: #C0C3BA; }
 .album-1 .pink { background-color: #7F7362; }
 .album-1 .yellow { background-color: #364935; }
 .album-1 .blalck { background-color: #2C2E2D; }
-.album-1 { box-shadow: 12px 12px 0px #65823E; } /* Sombra rosa */
+.album-1 { box-shadow: 12px 12px 0px #65823E; } 
 
-/* --- COLORES PARA EL ÁLBUM 2 (Nadie Sabe - Azul/Oscuro) --- */
 .album-2 .red { background-color: #C1C4BB; } 
 .album-2 .lavender { background-color: #7F7462; }
 .album-2 .pink { background-color: #573a0c; }
 .album-2 .yellow { background-color: #2C2E2D; }
-.album-2 { box-shadow: 12px 12px 0px #573a0c; } /* Sombra azul */
+.album-2 { box-shadow: 12px 12px 0px #573a0c; } 
 
-/* --- COLORES PARA EL ÁLBUM 3 (YHLQMDLG - Multicolor/Negro) --- */
 .album-3 .red { background-color: #E63928; }
 .album-3 .lavender { background-color: #D1D7F3; }
 .album-3 .pink { background-color: #F4959B; }
 .album-3 .yellow { background-color: #F1B418; }
-.album-3 { box-shadow: 12px 12px 0px #E63928; } /* Sombra amarilla */
+.album-3 { box-shadow: 12px 12px 0px #E63928; } 
 
 
 img {
@@ -263,20 +226,18 @@ img {
     width: 50%;
   }
 
-/* Contenedor del menú */
 .spotify-3 {
     display: flex;
     justify-content: center;
     margin-top: 15px;
 }
 
-/* El enlace convertido en botón con imagen */
 .spotify-3 a {
     display: flex;
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: #1DB954; /* Verde Spotify */
+    color: #1DB954; 
     font-family: sans-serif;
     font-size: 0.8rem;
     font-weight: bold;
@@ -287,7 +248,6 @@ img {
     transition: all 0.3s ease;
 }
 
-/* Añadir la imagen antes del texto mediante CSS */
 .spotify-3 a::before {
     content: "";
     width: 20px;
@@ -297,7 +257,6 @@ img {
     background-repeat: no-repeat;
 }
 
-/* Efecto al pasar el ratón */
 .spotify-3 a:hover {
     background-color: #1DB954;
     color: white;
@@ -307,18 +266,17 @@ img {
 
 
 .main-content {
-    max-width: 900px; /* Ancho contenido para lectura cómoda */
+    max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Tarjetas Verticales */
 .card {
     background: white;
     margin-bottom: 60px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 90px 90px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    box-shadow: 0 90px 90px rgba(0, 0, 0, 0.05); 
 }
 
 .card-image {
@@ -333,7 +291,6 @@ img {
     object-fit: cover;
 }
 
-/* Detalle de color elegante en lugar de un borde total */
 .image-overlay-accent {
     position: absolute;
     bottom: 0;
@@ -344,7 +301,6 @@ img {
 .blue { background-color: #3463fc; }
 .red { background-color: #e63946; }
 
-/* Contenedor de Texto */
 .card-text {
     padding: 40px;
 }
