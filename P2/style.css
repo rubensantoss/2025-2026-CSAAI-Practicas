@@ -1,0 +1,213 @@
+:root {
+    /* Paleta Neumórfica */
+    --bg-color: #e0e5ec;
+    --text-main: #4a5568;
+    --text-light: #a0aec0;
+    
+    /* Colores de acento pastel */
+    --accent-green: #38b2ac;
+    --accent-red: #fc8181;
+    --accent-blue: #4299e1;
+    
+    /* Sombras 3D */
+    --shadow-light: rgba(255, 255, 255, 0.7);
+    --shadow-dark: rgba(163, 177, 198, 0.6);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 420px;
+    width: 90%;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+#header {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- CLASES NEUMÓRFICAS CORE --- */
+/* Elemento que sobresale (botones, contenedor principal) */
+.neu-out {
+    background: var(--bg-color);
+    box-shadow: 9px 9px 16px var(--shadow-dark), 
+               -9px -9px 16px var(--shadow-light);
+}
+
+/* Elemento hundido (pantallas, ranuras) */
+.neu-in {
+    background: var(--bg-color);
+    box-shadow: inset 6px 6px 10px 0 var(--shadow-dark), 
+                inset -6px -6px 10px 0 var(--shadow-light);
+}
+
+/* Hundido más suave para textos */
+.neu-in-small {
+    background: var(--bg-color);
+    box-shadow: inset 3px 3px 6px 0 var(--shadow-dark), 
+                inset -3px -3px 6px 0 var(--shadow-light);
+    border-radius: 10px;
+}
+/* ------------------------------- */
+
+#info-panel, #numpad-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+/* RANURAS DE LA CLAVE */
+#secret-key-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+.digit {
+    border-radius: 12px;
+    height: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.digit.revealed {
+    color: var(--accent-green);
+    /* Cuando se revela, sobresale como un botón */
+    box-shadow: 6px 6px 12px var(--shadow-dark), 
+               -6px -6px 12px var(--shadow-light);
+    transform: translateY(-2px);
+}
+
+.asterisco {
+    color: var(--accent-red);
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+/* CRONÓMETRO */
+#timer-container {
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    width: 80%;
+}
+
+#crono-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: monospace;
+    text-align: center;
+    color: var(--text-main);
+}
+
+/* ESTADO E INSTRUCCIONES */
+#status-container {
+    text-align: center;
+    width: 100%;
+}
+
+#attempts-display {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--accent-blue);
+}
+
+#instructions-container {
+    padding: 1rem;
+}
+
+#instructions-container p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* TECLADO */
+#numpad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    width: 100%;
+}
+
+.neu-btn {
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background: var(--bg-color);
+    color: var(--text-main);
+    box-shadow: 6px 6px 12px var(--shadow-dark), 
+               -6px -6px 12px var(--shadow-light);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.num-btn {
+    height: 4rem;
+    font-size: 1.8rem;
+}
+
+/* Efecto al pulsar: el botón se hunde */
+.neu-btn:active {
+    box-shadow: inset 4px 4px 8px 0 var(--shadow-dark), 
+                inset -4px -4px 8px 0 var(--shadow-light);
+    color: var(--accent-blue);
+}
+
+.neu-btn:disabled {
+    box-shadow: inset 2px 2px 5px 0 var(--shadow-dark), 
+                inset -2px -2px 5px 0 var(--shadow-light);
+    color: var(--text-light);
+    cursor: not-allowed;
+}
+
+.blank-panel {
+    background-color: transparent;
+}
+
+/* CONTROLES */
+#controls-container {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.control-btn {
+    flex: 1;
+    height: 3.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.green-text { color: var(--accent-green); }
+.red-text { color: var(--accent-red); }
+.blue-text { color: var(--accent-blue); }

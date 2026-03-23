@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego: Adivina la Clave - Neumorfismo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container neu-out">
+        
+        <h1 id="header">Adivina la Clave</h1>
+
+        <div id="info-panel">
+            <div id="secret-key-container">
+                <div class="digit hidden neu-in" id="digit-0"><span class="asterisco">*</span></div>
+                <div class="digit hidden neu-in" id="digit-1"><span class="asterisco">*</span></div>
+                <div class="digit hidden neu-in" id="digit-2"><span class="asterisco">*</span></div>
+                <div class="digit hidden neu-in" id="digit-3"><span class="asterisco">*</span></div>
+            </div>
+            
+            <div id="timer-container" class="neu-in">
+                <div id="crono-display">00:00:00</div>
+            </div>
+
+            <div id="status-container">
+                <div id="attempts-display">Intentos restantes: <span id="attempts-count">7</span></div>
+                <div id="instructions-container" class="neu-in-small">
+                    <p id="message-text">Nueva partida preparada. Pulsa Start o un número.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="numpad-panel">
+            <div id="numpad-grid">
+                <button class="num-btn neu-btn" id="btn-num-7">7</button>
+                <button class="num-btn neu-btn" id="btn-num-8">8</button>
+                <button class="num-btn neu-btn" id="btn-num-9">9</button>
+                
+                <button class="num-btn neu-btn" id="btn-num-4">4</button>
+                <button class="num-btn neu-btn" id="btn-num-5">5</button>
+                <button class="num-btn neu-btn" id="btn-num-6">6</button>
+                
+                <button class="num-btn neu-btn" id="btn-num-1">1</button>
+                <button class="num-btn neu-btn" id="btn-num-2">2</button>
+                <button class="num-btn neu-btn" id="btn-num-3">3</button>
+                
+                <div class="blank-panel"></div>
+                <button class="num-btn neu-btn" id="btn-num-0">0</button>
+                <div class="blank-panel"></div>
+            </div>
+
+            <div id="controls-container">
+                <button id="btn-start" class="control-btn neu-btn green-text">Start</button>
+                <button id="btn-stop" class="control-btn neu-btn red-text">Stop</button>
+                <button id="btn-reset" class="control-btn neu-btn blue-text">Reset</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="crono.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
