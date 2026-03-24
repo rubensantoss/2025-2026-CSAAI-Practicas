@@ -11,7 +11,7 @@ class Cronometro {
     start() {
         if (!this.isRunning) {
             this.startTime = Date.now() - this.elapsedTime;
-            this.interval = setInterval(() => this.updateDisplay(), 10); // Actualiza cada 10ms
+            this.interval = setInterval(() => this.updateDisplay(), 10); 
             this.isRunning = true;
         }
     }

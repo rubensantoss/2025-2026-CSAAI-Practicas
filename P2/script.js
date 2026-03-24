@@ -1,16 +1,14 @@
-// script.js
+
 const MAX_ATTEMPTS = 7;
 let secretKey = [];
 let attemptsLeft = MAX_ATTEMPTS;
 let digitsGuessed = 0;
 let gameEnded = false;
 
-// Referencias del DOM
 const cronoDisplay = document.getElementById('crono-display');
 const attemptsCountSpan = document.getElementById('attempts-count');
 const instructionsText = document.getElementById('message-text');
 
-// Instanciar el cronómetro importado de crono.js (usa el mismo de antes)
 const crono = new Cronometro(cronoDisplay);
 
 window.onload = () => {
@@ -78,7 +76,7 @@ function revelarDigito(index, numero) {
     let digitDiv = document.getElementById(`digit-${index}`);
     digitDiv.innerHTML = numero; 
     digitDiv.classList.remove('hidden', 'neu-in');
-    digitDiv.classList.add('revealed', 'neu-out'); // Sale hacia afuera al revelarse
+    digitDiv.classList.add('revealed', 'neu-out'); 
 }
 
 function comprobarFinDeJuego() {
@@ -119,7 +117,7 @@ function resetearPantallaClave() {
     for (let i = 0; i < 4; i++) {
         let digitDiv = document.getElementById(`digit-${i}`);
         digitDiv.innerHTML = '<span class="asterisco">*</span>';
-        digitDiv.className = 'digit hidden neu-in'; // Vuelve a estar hundido
+        digitDiv.className = 'digit hidden neu-in'; 
     }
 }
 
