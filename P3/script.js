@@ -24,8 +24,8 @@ const keys = {
 
 // --- MULTIMEDIA (ASSETS) ---
 // Comandante, sustituye los enlaces en los constructores Audio() por tus archivos locales (.mp3 o .wav)
-const sfxLaser = new Audio(''); // Ej: 'sonidos/laser.mp3'
-const sfxExplosion = new Audio(''); 
+const sfxLaser = new Audio('laser.mp3'); // Ej: 'sonidos/laser.mp3'
+const sfxExplosion = new Audio('explosion.mp3'); 
 const sfxWin = new Audio('victoria.mp3'); 
 const sfxLose = new Audio('derrota.mp3'); 
 
