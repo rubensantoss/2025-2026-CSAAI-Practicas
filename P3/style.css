@@ -26,7 +26,7 @@ canvas {
     border: 2px solid #333;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
     display: block;
-    width: 100%; /* Responsive */
+    width: 100%;
     height: auto;
 }
 
@@ -36,7 +36,7 @@ canvas {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Permite que los clicks pasen al canvas si fuera necesario */
+    pointer-events: none;
 }
 
 #stats {
@@ -70,6 +70,5 @@ canvas {
     margin-bottom: 10px;
 }
 
-/* Colores para la victoria y derrota */
 .win-text { color: #00ff00; }
 .lose-text { color: #ff0000; border-color: #ff0000 !important; box-shadow: 0 0 30px #ff0000 !important;}
