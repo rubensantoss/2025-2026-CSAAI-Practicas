@@ -1,0 +1,144 @@
+:root {
+    --primary: #4f46e5;
+    --danger: #ef4444;
+    --bg-color: #f8fafc;
+    --text-main: #0f172a;
+    --grid-bg: #e2e8f0;
+    --highlight: #f59e0b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.status-panel {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+}
+
+.controls {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.control-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+select, button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn {
+    font-weight: bold;
+    border: none;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+.btn:active { transform: scale(0.95); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.primary { background: var(--primary); color: white; }
+.danger { background: var(--danger); color: white; }
+.outline { background: white; border: 2px solid var(--primary); color: var(--primary); }
+
+.game-area {
+    text-align: center;
+}
+
+.word-display {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    min-height: 60px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background: var(--grid-bg);
+    aspect-ratio: 1;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+.grid-item.active {
+    background: var(--highlight);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--highlight);
+    border: 3px solid white;
+}
+
+@media (max-width: 500px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

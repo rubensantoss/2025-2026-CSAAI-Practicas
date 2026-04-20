@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat the Word</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Beat the Word 🎵</h1>
+        <div class="status-panel">
+            <p>Nivel: <span id="level-display">1</span> / 5</p>
+            <p>Tiempo: <span id="time-display">00:00</span></p>
+            <p>Estado: <span id="status-display">Esperando...</span></p>
+        </div>
+    </header>
+
+    <main>
+        <section class="controls">
+            <h2 class="sr-only">Configuración del Juego</h2>
+            <div class="control-group">
+                <label for="word-pair">Pareja:</label>
+                <select id="word-pair">
+                    <option value="cama,casa">Cama / Casa</option>
+                    <option value="gato,perro">Gato / Perro</option>
+                </select>
+
+                <label for="start-level">Nivel inicial:</label>
+                <select id="start-level">
+                    <option value="1">1 (Lento)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Rápido)</option>
+                </select>
+            </div>
+
+            <div class="control-group buttons">
+                <button id="btn-start" class="btn primary">▶ Comenzar</button>
+                <button id="btn-stop" class="btn danger" disabled>⏹ Detener</button>
+                <button id="btn-music" class="btn outline">🔊 Música: OFF</button>
+            </div>
+        </section>
+
+        <section class="game-area">
+            <h2 id="current-word">¿Preparado?</h2>
+
+            <div class="grid-container" id="grid">
+                <div class="grid-item" id="item-0"></div>
+                <div class="grid-item" id="item-1"></div>
+                <div class="grid-item" id="item-2"></div>
+                <div class="grid-item" id="item-3"></div>
+                <div class="grid-item" id="item-4"></div>
+                <div class="grid-item" id="item-5"></div>
+                <div class="grid-item" id="item-6"></div>
+                <div class="grid-item" id="item-7"></div>
+            </div>
+        </section>
+    </main>
+
+    <audio id="bg-music" src="musica.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
