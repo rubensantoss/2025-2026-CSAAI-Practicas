@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot League - 2vs2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-wrapper">
+        <div id="menu-screen" class="overlay">
+            <h1>Bot League</h1>
+            <p>Elige modo de juego:</p>
+            <button onclick="startGame('3goles')">1. Partido a 3 goles</button>
+            <button onclick="startGame('oro')">2. Gol de oro</button>
+        </div>
+
+        <div id="gameover-screen" class="overlay hidden">
+            <h1 id="gameover-msg">¡Has ganado!</h1>
+            <button onclick="restartGame()">Reiniciar</button>
+            <button onclick="showMenu()">Volver al menú</button>
+        </div>
+
+        <div id="message-overlay" class="hidden">
+            <h2 id="center-message">3</h2>
+        </div>
+
+        <div id="scoreboard" class="hidden">
+            <span id="score-player">0</span> - <span id="score-bot">0</span>
+        </div>
+
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
